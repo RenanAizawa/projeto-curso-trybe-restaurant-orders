@@ -30,8 +30,7 @@ def primeira(data, logs):
 def segundo(logs):
     pedido = 0
     for log in logs:
-        if (log[0] == "arnaldo") and (
-            log[1] == "hamburguer"):
+        if (log[0] == "arnaldo") and (log[1] == "hamburguer"):
             pedido += 1
     return pedido
 
