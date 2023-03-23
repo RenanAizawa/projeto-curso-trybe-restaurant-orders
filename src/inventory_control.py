@@ -42,6 +42,7 @@ class InventoryControl:
 
     def get_available_dishes(self):
         pratos_validos = set()
+        pratos_em_falta = set()
         for prato in self.INGREDIENTS:
             for food in self.INGREDIENTS[prato]:
                 d1 = self.compra_de_ingredientes[food]
@@ -49,5 +50,5 @@ class InventoryControl:
                 if d1 < d2:
                     pratos_validos.add(prato)
                 else:
-                    pratos_validos.discard(prato)
-        return pratos_validos
+                    pratos_em_falta.add(prato)
+        return pratos_validos.difference(pratos_em_falta)
