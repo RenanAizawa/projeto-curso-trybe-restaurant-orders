@@ -17,13 +17,13 @@ class InventoryControl:
 
     def __init__(self):
         self.compra_de_ingredientes = {
-        'pao': 0,
-        'carne': 0,
-        'queijo': 0,
-        'molho': 0,
-        'presunto': 0,
-        'massa': 0,
-        'frango': 0,
+            'pao': 0,
+            'carne': 0,
+            'queijo': 0,
+            'molho': 0,
+            'presunto': 0,
+            'massa': 0,
+            'frango': 0,
         }
         self.costumer_orders = list()
 
