@@ -41,4 +41,13 @@ class InventoryControl:
         return self.compra_de_ingredientes
 
     def get_available_dishes(self):
-        ...
+        pratos_validos = set()
+        for prato in self.INGREDIENTS:
+            for food in self.INGREDIENTS[prato]:
+                d1 = self.compra_de_ingredientes[food]
+                d2 = self.MINIMUM_INVENTORY[food]
+                if d1 < d2:
+                    pratos_validos.add(prato)
+                else:
+                    pratos_validos.discard(prato)
+        return pratos_validos
