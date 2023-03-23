@@ -31,13 +31,14 @@ class InventoryControl:
         self.costumer_orders.append([str(customer),
                                      str(order), str(day)])
         for food in self.INGREDIENTS[order]:
-            if self.compra_de_ingredientes[food] >= self.MINIMUM_INVENTORY[food]:
-                return False                                                    
+            d1 = self.compra_de_ingredientes[food]
+            d2 = self.MINIMUM_INVENTORY[food]
+            if d1 >= d2:
+                return False
             self.compra_de_ingredientes[food] += 1
 
     def get_quantities_to_buy(self):
         return self.compra_de_ingredientes
-    
-    def get_available_dishes():
-        # retorno: um conjunto de pratos que ainda têm ingredientes disponíveis no estoque
+
+    def get_available_dishes(self):
         ...
